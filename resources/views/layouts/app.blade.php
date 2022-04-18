@@ -20,9 +20,14 @@
                 <ul class="navbar-nav me-auto mb-2 mt-1">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('product.index') }}">
-                            Produto
+                            Tênis
                         </a>
-                    </li>                    
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('brand.index') }}">
+                            Marcas
+                        </a>
+                    </li>                                   
                 </ul>
             </div>
         </nav>
