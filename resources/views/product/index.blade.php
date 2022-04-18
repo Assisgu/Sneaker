@@ -22,7 +22,7 @@
                 <td>{{$product->description}}</td>
                 <td>{{$product->price}}</td>                
                 <td><a href="{{route('product.edit', $product->id)}}" class="btn btn-sm btn-warning text-decoration-none">Editar</a></td>                
-                <td><a href="{{route('product.destroy', $product->id)}}" class="btn btn-sm btn-danger text-decoration-none">Apagar</a></td>                
+                <td><a href="{{route('product.destroy', $product->id)}}" class="btn btn-sm btn-danger text-decoration-none">Esgotado</a></td>                
                 
             </tr>
             @endforeach
