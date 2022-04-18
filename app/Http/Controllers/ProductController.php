@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Tag;
 
 class ProductController extends Controller
 {
@@ -14,11 +15,12 @@ class ProductController extends Controller
 
     public function create(){
         
-        return view('product.create')->with('brands', Brand::all());
+        return view('product.create')->with(['brands' => Brand::all(), 'tags' => Tag::all()]);
     }
 
     public function store(Request $request) {
         $product = Product::create($request->all());
+        $product->Tags()->sync($request->tags);
         session()->flash('success', 'O produto foi criado com sucesso');
         return redirect(route('product.index'));
     }
@@ -27,13 +29,15 @@ class ProductController extends Controller
 
         return view('product.edit')->with([
             'product' => $product,
-            'brands' => Brand::all()
+            'brands' => Brand::all(),
+            'tags' => Tag::all()
         ]);
     }
 
     public function update(Product $product, Request $request){
         
         $product->update($request->all());
+        $product->Tags()->sync($request->tags);
         session()->flash('success', 'O produto foi alterado com sucesso');
         return redirect(route('product.index', $product->id));
     }

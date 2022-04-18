@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('brands', function (Blueprint $table){
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        Schema::table('brands', function (Blueprint $table){
+            $table->dropColumn('deleted_at');
+        });
     }
 };

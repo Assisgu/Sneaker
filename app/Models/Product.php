@@ -17,4 +17,12 @@ class Product extends Model
     public function Brands(){
         return $this->belongsTo(Brand::class);
     }
+
+    public function Tags() {
+        return $this->belongsToMany(Tag::class);
+    }
+
+    public function hasTag($tag_id){  //pluck retorna os id's (ou o que eu quiser)
+        return in_array($tag_id, $this->Tags->pluck('id')->toArray());
+    }
 }

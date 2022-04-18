@@ -25,6 +25,15 @@
                 @endforeach
             </select>
         </div>
+
+        <div class="col-7">
+            Selecione tags:
+            <select class="form-select" multiple name="tags[]" required>
+                @foreach($tags as $tag)
+                <option value="{{$tag->id}}">{{$tag->name}}</option>
+                @endforeach
+            </select>
+        </div>
         <button class="btn btn-lg w-50 btn-success mt-3 mb-2" type="submit">Cadastrar</button>
     </form>
 </section>

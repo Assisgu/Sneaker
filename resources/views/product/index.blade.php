@@ -9,9 +9,10 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nome </th>                
+                <th>Nome </th>
                 <th>Descrição</th>
-                <th>Preço</th>                            
+                <th>Preço</th>
+                <th>Tag</th>
             </tr>
         </thead>
         <tbody>
@@ -20,10 +21,17 @@
                 <td>{{$product->id}}</td>
                 <td>{{$product->name}}</td>
                 <td>{{$product->description}}</td>
-                <td>{{$product->price}}</td>                
-                <td><a href="{{route('product.edit', $product->id)}}" class="btn btn-sm btn-warning text-decoration-none">Editar</a></td>                
-                <td><a href="{{route('product.destroy', $product->id)}}" class="btn btn-sm btn-danger text-decoration-none">Esgotado</a></td>                
-                
+                <td>{{$product->price}}</td>
+
+                <td>
+                    @foreach($product->Tags()->get() as $tag)
+                    {{$tag->name}}
+                    @endforeach
+                </td>
+
+                <td><a href="{{route('product.edit', $product->id)}}" class="btn btn-sm btn-warning text-decoration-none">Editar</a></td>
+                <td><a href="{{route('product.destroy', $product->id)}}" class="btn btn-sm btn-danger text-decoration-none">Esgotado</a></td>
+
             </tr>
             @endforeach
         </tbody>
