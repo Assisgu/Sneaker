@@ -6,6 +6,7 @@ use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Tag;
+use App\Models\Size;
 
 class ProductController extends Controller
 {
@@ -20,6 +21,15 @@ class ProductController extends Controller
 
     public function store(Request $request) {
         $product = Product::create($request->all());
+
+        for($i = 35; $i <= 45; $i++){
+            Size::create([
+                'product_id' => $product->id,
+                'number' => $i,
+                'stock' => $request->get($i) == '' ? 0 : $request->get($i)
+            ]);
+        }
+
         $product->Tags()->sync($request->tags);
         session()->flash('success', 'O produto foi criado com sucesso');
         return redirect(route('product.index'));
