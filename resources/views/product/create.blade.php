@@ -36,7 +36,7 @@
         </div>
 
         <div class="col-7 row mt-4">
-            @for($i = 35; $i <= 45; $i++)
+            @for($i = 35; $i <= 46; $i++)
             <div class="col-2">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">{{ $i }}</span>

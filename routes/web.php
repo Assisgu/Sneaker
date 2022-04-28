@@ -18,7 +18,8 @@ use App\Http\Controllers\TagController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -26,7 +27,9 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
+
+    //tudo aqui dentro proibido (somente admin)
 
     Route::get('/product', [ProductController::class, 'index'])->name('product.index');
     Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
