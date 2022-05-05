@@ -32,7 +32,18 @@
                         <a class="nav-link" href="{{ route('tag.index') }}">
                             Tags
                         </a>
-                    </li>                                                                      
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('cart.index') }}">
+                            Carrinho
+                        </a>
+                    </li> 
+                    <li class="ms-auto">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-danger mt-1">Sair</button>
+                        </form>
+                    </li>                                                                     
                 </ul>
             </div>
         </nav>
