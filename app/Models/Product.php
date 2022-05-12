@@ -9,7 +9,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Product extends Model
 {
     use HasFactory;
+    use SoftDeletes;
     
 
-    protected $fillable = ['name', 'description', 'price'];
+    protected $fillable = ['name', 'description', 'price', 'brand_id', 'image'];
+
+    public function Brands(){
+        return $this->belongsTo(Brand::class);
+    }
+
+    public function Tags() {
+        return $this->belongsToMany(Tag::class);
+    }
+
+    public function hasTag($tag_id){  //pluck retorna os id's (ou o que eu quiser)
+        return in_array($tag_id, $this->Tags->pluck('id')->toArray());
+    }
 }

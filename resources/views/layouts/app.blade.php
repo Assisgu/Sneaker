@@ -20,9 +20,30 @@
                 <ul class="navbar-nav me-auto mb-2 mt-1">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('product.index') }}">
-                            Produto
+                            Tênis
                         </a>
-                    </li>                    
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('brand.index') }}">
+                            Marcas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('tag.index') }}">
+                            Tags
+                        </a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('cart.index') }}">
+                            Carrinho
+                        </a>
+                    </li> 
+                    <li class="ms-auto">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-danger mt-1">Sair</button>
+                        </form>
+                    </li>                                                                     
                 </ul>
             </div>
         </nav>
