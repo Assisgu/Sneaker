@@ -12,7 +12,7 @@ class Product extends Model
     use SoftDeletes;
     
 
-    protected $fillable = ['name', 'description', 'price', 'brand_id'];
+    protected $fillable = ['name', 'description', 'price', 'brand_id', 'image'];
 
     public function Brands(){
         return $this->belongsTo(Brand::class);

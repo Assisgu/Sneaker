@@ -17,6 +17,10 @@
         </div>
 
         <div class="col-7">
+            <input class="form-control mt-3 text-center" placeholder="Image" type="file" name="image">
+        </div>
+
+        <div class="col-7">
             <input class="form-control mt-3 text-center" placeholder="Price" type="number" step="0.1" name="price" value="{{$product->price}}" required>
         </div>
 

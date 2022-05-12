@@ -20,7 +20,16 @@ class ProductController extends Controller
     }
 
     public function store(Request $request) {
-        $product = Product::create($request->all());
+        
+        $image = "storage/".$request->file('image')->store('itens');
+
+        $product = Product::create([
+            'name' => $request->name,
+            'description' => $request-> description,
+            'price' => $request->price,
+            'brand_id' => $request->brand_id,
+            'image' => $image
+        ]);
 
         for($i = 35; $i <= 45; $i++){
             Size::create([
