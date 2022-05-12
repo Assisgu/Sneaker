@@ -8,7 +8,8 @@
         <thead>
             <tr>
             <th>ID</th>
-                <th>Nome</th>                
+                <th>Nome</th>  
+                <th> Imagem </th>              
                 <th>Descrição</th>
                 <th>Preço</th>
             </tr>
@@ -17,7 +18,8 @@
             @foreach($products as $product)
             <tr>
                 <td>{{$product->id}}</td>
-                <td>{{$product->name}}</td>                
+                <td>{{$product->name}}</td>
+                <td><img src="{{asset($product->image)}}" style="width: 35px; height: 35px;" alt=""></td>                
                 <td>{{$product->description}}</td>                                
                 <td>{{$product->price}}</td>                                
                 <td><a href="{{route('product.restore', $product->id)}}" class="btn btn-sm btn-success text-decoration-none">Restaurar</a></td>
