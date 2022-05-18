@@ -38,6 +38,11 @@
                             Carrinho
                         </a>
                     </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/') }}">
+                          Client Page
+                        </a>
+                    </li> 
                     <li class="ms-auto">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
