@@ -10,28 +10,31 @@ use App\Models\Size;
 
 class ProductController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('product.index')->with('products', Product::all());
     }
 
-    public function create(){
-        
+    public function create()
+    {
+
         return view('product.create')->with(['brands' => Brand::all(), 'tags' => Tag::all()]);
     }
 
-    public function store(Request $request) {
-        
-        $image = "storage/".$request->file('image')->store('itens');
+    public function store(Request $request)
+    {
+
+        $image = "storage/" .$request->file('image')->store('itens');
 
         $product = Product::create([
             'name' => $request->name,
-            'description' => $request-> description,
+            'description' => $request->description,
             'price' => $request->price,
             'brand_id' => $request->brand_id,
             'image' => $image
         ]);
 
-        for($i = 35; $i <= 45; $i++){
+        for ($i = 35; $i <= 45; $i++) {
             Size::create([
                 'product_id' => $product->id,
                 'number' => $i,
@@ -44,7 +47,8 @@ class ProductController extends Controller
         return redirect(route('product.index'));
     }
 
-    public function edit(Product $product){
+    public function edit(Product $product)
+    {
 
         return view('product.edit')->with([
             'product' => $product,
@@ -53,25 +57,48 @@ class ProductController extends Controller
         ]);
     }
 
-    public function update(Product $product, Request $request){
+    public function update(Product $product, Request $request)
+    {
+
+        if ($request->image) {
+
+            $image = "storage/" .$request->file('image')->store('itens');
+
+            $product = Product::create([
+                'name' => $request->name,
+                'description' => $request->description,
+                'price' => $request->price,
+                'brand_id' => $request->brand_id,
+                'image' => $image
+            ]);
+        } else {
+            $product = Product::create([
+                'name' => $request->name,
+                'description' => $request->description,
+                'price' => $request->price,
+                'brand_id' => $request->brand_id,                
+            ]);
+        }
         
-        $product->update($request->all());
         $product->Tags()->sync($request->tags);
         session()->flash('success', 'O produto foi alterado com sucesso');
         return redirect(route('product.index', $product->id));
     }
 
-    public function destroy(Product $product){
+    public function destroy(Product $product)
+    {
         $product->delete();
         session()->flash('success', 'O produto foi apagado com sucesso');
         return redirect(route('product.index'));
     }
 
-    public function trash(){
+    public function trash()
+    {
         return view('product.trash')->with('products', Product::onlyTrashed()->get());
     }
 
-    public function restore($product_id){
+    public function restore($product_id)
+    {
         $product = Product::onlyTrashed()->where('id', $product_id)->first();
         $product->restore();
         session()->flash('success', 'Produto restaurado com sucesso');

@@ -5,7 +5,7 @@
     <div class="text-center justify-content-center d-flex">
         <a class="btn btn-md btn-dark float-end me-2" href="{{route('product.index')}}">Voltar a Lista Tênis</a>
     </div>
-    <form class="text-center row justify-content-center d-flex" action="{{route('product.edit', $product->id)}}" method="POST">
+    <form class="text-center row justify-content-center d-flex" action="{{route('product.edit', $product->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method("PUT")
         <div class="col-7">
