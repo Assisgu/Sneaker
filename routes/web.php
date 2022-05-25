@@ -8,8 +8,10 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\eCommerceController;
 
 Route::get('/', [eCommerceController::class, 'index'])->name('home');
-Route::get('/search/category/{brand}', [eCommerceController::class, 'searchBrand'])->name('serach-brand');
-Route::get('/search/tag/{tag}', [eCommerceController::class, 'searchTag'])->name('serach-tag');
+Route::get('/search/category/{brand}', [eCommerceController::class, 'searchBrand'])->name('search-brand');
+Route::get('/search/tag/{tag}', [eCommerceController::class, 'searchTag'])->name('search-tag');
+Route::get('/search/product/', [eCommerceController::class, 'searchProduct'])->name('search.product');
+Route::get('/show/{product}/', [eCommerceController::class, 'showProduct'])->name('show.product');
 
 require __DIR__ . '/auth.php';
 

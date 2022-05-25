@@ -27,7 +27,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarCategoria" role="button" data-bs-toggle="dropdown">Categorias</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarCategoria">
                                 @foreach (\App\Models\Brand::all() as $brand)
-                                    <a class="dropdown-item" href="{{ route('serach-brand', $brand->id) }}">{{ $brand->name }}</a>
+                                    <a class="dropdown-item" href="{{ route('search-brand', $brand->id) }}">{{ $brand->name }}</a>
                                 @endforeach
                             </ul>
                         </li>
@@ -35,7 +35,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarTag" role="button" data-bs-toggle="dropdown">Tags</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarTag">
                                 @foreach (\App\Models\Tag::all() as $tag)
-                                    <a class="dropdown-item" href="{{ route('serach-tag', $tag->id) }}">{{ $tag->name }}</a>
+                                    <a class="dropdown-item" href="{{ route('search-tag', $tag->id) }}">{{ $tag->name }}</a>
                                 @endforeach
                             </ul>
                         </li>
@@ -48,6 +48,15 @@
                         @endif
                     </ul>
 
+                    <form action="{{ route('search.product') }}" class="form-group my-0 mx-auto w-50">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Digite o nome do produto" name="s">
+                            <div class="input-group-append">
+                                <button type="submit" class="input-group-text">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                    
                     <ul class="navbar-nav ms-auto">
                         @guest
                             <li class="nav-item">
