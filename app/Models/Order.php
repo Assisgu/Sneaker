@@ -11,6 +11,6 @@ class Order extends Model
     protected $fillable = ['user', 'adress', 'city', 'state', 'zipcode', 'product_id', 'name', 'price', 'units' ];
 
     public function Products(){
-        return $this->belongsToMany(Product::class)->withPivot('name', 'price', 'units');
+        return $this->belongsToMany(Product::class)->withPivot('name', 'price', 'units')->withTrashed();
     }
 }

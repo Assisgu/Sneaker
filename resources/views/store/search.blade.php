@@ -18,10 +18,6 @@
                     </div>
                     <div class="text-center mt-3">
                         <a href="{{ route('show.product', $product->id)}}" class="btn btn-primary btn-sm">Visualizar</a>
-                        <form action="{{ route('cart.store', $product->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            <button type="submit" class="btn btn-primary btn-sm"> Comprar </button>
-                        </form>
                     </div>
                 </div>
             @endforeach
