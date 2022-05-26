@@ -7,6 +7,7 @@
         <thead>
             <tr>
                 <th>Produto</th>
+                <th>Tamanho</th>
                 <th>Quantidade</th>
                 <th>Preço</th>
             </tr>
@@ -16,14 +17,15 @@
             @foreach($itens as $item)
             <tr>
                 <td>{{$item->Product->name}}</td>
+                <td>{{$item->Size->number}}</td>
                 <td>{{$item->Product->price}}</td>
                 <td>
-                    <form action="{{route('cart.store', $item->Product->id)}}" method="POST" style="display:inline;">
+                    <form action="{{route('cart.store', [$item->Product->id, $item->Size->id])}}" method="POST" style="display:inline;">
                         @csrf
                         <button type="submit" class="btn btn-primary btn-sm">+</button>
                     </form>
                     {{$item->units}}
-                    <form action="{{route('cart.store', $item->Product->id)}}" method="POST" style="display:inline">
+                    <form action="{{route('cart.store', [$item->Product->id,$item->Size->id])}}" method="POST" style="display:inline">
                         @csrf
                         @method("DELETE")
                         <button type="submit" class="btn btn-primary btn-sm">-</button>

@@ -39,13 +39,25 @@
                                 @endforeach
                             </ul>
                         </li>
+                        @if(Auth()->user() && Auth()->user())
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('cart.index') }}">
+                                Carrinho
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('order.index') }}">
+                                Ordens
+                            </a>
+                        </li>
+                        @endif 
                         @if(Auth()->user() && Auth()->user()->isAdmin())
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('product.index') }}">
                                 Admin
                             </a>
                         </li>
-                        @endif
+                        @endif                        
                     </ul>
 
                     <form action="{{ route('search.product') }}" class="form-group my-0 mx-auto w-50">

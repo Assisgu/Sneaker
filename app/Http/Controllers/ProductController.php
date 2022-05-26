@@ -34,7 +34,7 @@ class ProductController extends Controller
             'image' => $image
         ]);
 
-        for ($i = 35; $i <= 45; $i++) {
+        for ($i = 35; $i <= 46; $i++) {
             Size::create([
                 'product_id' => $product->id,
                 'number' => $i,
@@ -64,7 +64,7 @@ class ProductController extends Controller
 
             $image = "storage/" .$request->file('image')->store('itens');
 
-            $product = Product::create([
+            $product->update([
                 'name' => $request->name,
                 'description' => $request->description,
                 'price' => $request->price,
@@ -72,7 +72,7 @@ class ProductController extends Controller
                 'image' => $image
             ]);
         } else {
-            $product = Product::create([
+            $product->update([
                 'name' => $request->name,
                 'description' => $request->description,
                 'price' => $request->price,

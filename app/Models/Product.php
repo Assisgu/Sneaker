@@ -25,4 +25,8 @@ class Product extends Model
     public function hasTag($tag_id){  //pluck retorna os id's (ou o que eu quiser)
         return in_array($tag_id, $this->Tags->pluck('id')->toArray());
     }
+
+    public function Sizes(){
+        return $this->hasMany(Size::class);
+    }
 }
