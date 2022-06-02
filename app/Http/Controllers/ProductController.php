@@ -34,7 +34,7 @@ class ProductController extends Controller
             'image' => $image
         ]);
 
-        for ($i = 35; $i <= 46; $i++) {
+        for ($i = 35; $i < 46; $i++) {
             Size::create([
                 'product_id' => $product->id,
                 'number' => $i,
