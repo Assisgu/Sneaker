@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
-    protected $fillable = ['user', 'adress', 'city', 'state', 'zipcode', 'product_id', 'name', 'price', 'units' ];
+    protected $fillable = ['user_id', 'address', 'city', 'state', 'zipcode', 'product_id', 'name', 'price', 'units', 'size' ];
 
     public function Products(){
-        return $this->belongsToMany(Product::class)->withPivot('name', 'price', 'units')->withTrashed();
-    }
+        return $this->belongsToMany(Product::class)->withPivot('name', 'price', 'units', 'size')->withTrashed();
+    }   
 }

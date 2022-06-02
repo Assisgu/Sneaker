@@ -79,6 +79,12 @@ class ProductController extends Controller
                 'brand_id' => $request->brand_id,                
             ]);
         }
+
+        for ($i = 35; $i < 46; $i++) {
+            $product->Sizes[$i - 35]->update([
+                'stock' => $request->get($i) == '' ? 0 : $request->get($i)
+            ]);
+        }
         
         $product->Tags()->sync($request->tags);
         session()->flash('success', 'O produto foi alterado com sucesso');

@@ -19,7 +19,8 @@ class CartController extends Controller
 
         $cart = Cart::where([
             'user_id' => $user->id,
-            'product_id' => $product->id])->first();
+            'product_id' => $product->id,
+            'size_id' => $size->id])->first();
 
         //Se o produto já estiver no carrinho
         if($cart){
