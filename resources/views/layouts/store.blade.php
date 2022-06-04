@@ -5,17 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Css Style -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/welcome.css">
+    
     <title>Dino Sneakers</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        {{-- bg-white --}}
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm dino-navbar-menu"> 
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Dino Sneakers
+                <a class="navbar-brand logo" href="{{ url('/') }}">
+                    <img src="./storage/imagem/logo.png" alt="Logo Dino Sneaker">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -96,7 +102,11 @@
             </div>
         </nav>
     </header>
-    <main class="py-4 container">
+    
+    <main class="pb-2 px-0 ">
+        @yield('video')
+
+    <section class="container">
         @if (session()->has('success'))
             <div class="alert alert-success">{{ session()->get('success') }}</div>
         @endif
@@ -104,6 +114,9 @@
             <div class="alert alert-danger">{{ session()->get('error') }}</div>
         @endif
         @yield('content')
+
+        </section>
+
     </main>
     <footer class="container p-5 bg-primary text-white">
         <div class="row">
