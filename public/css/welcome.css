@@ -6,7 +6,7 @@ header{
 video {
     width: 100%;
 }
-.content{
+.content-bg{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,4 +30,156 @@ video {
     height: 60vh;
     background: #47aafa;
     clip-path: circle(35% at 10% 100%);
+}
+
+.dino-container{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.dino-container .dino-card{
+    position: relative;
+    width:300px;
+    height: 400px;
+    margin: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+}
+
+.dino-container .dino-card .dino-img{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.dino-container .dino-card:hover .dino-img{
+    transform: translateY(-100px);
+}
+
+.dino-container .dino-card .dino-img img{
+    max-width: 100%;
+    margin: 0 0 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.dino-container .dino-card:hover .dino-img img{
+    transform: translate(-20px,-40px) rotate(-35deg) scale(1.4);
+}
+
+.dino-container .dino-card .dino-img h2 {
+    color: #fff;
+    font-weight: 600;
+}
+
+.dino-container .dino-card .content {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dino-container .dino-card:hover .content{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50px);
+}
+
+.dino-container .dino-card .content .size,
+.dino-container .dino-card .content .color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+}
+
+.dino-container .dino-card .content .size h3,
+.dino-container .dino-card .content .color h3 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+.dino-container .dino-card .content .size span {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 24px;
+    display: inline-block;
+    color: #111;
+    background: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 0 5px;
+    font-weight: 500;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.dino-container .dino-card .content .size span:hover{
+    background: purple;
+    color: #fff;
+} 
+
+.dino-container .dino-card .content .color span{
+    width: 20px;
+    height: 20px;
+    background: #f00;
+    border-radius: 50%;
+    margin: 0 5px;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.dino-container .dino-card .content .color span:nth-child(2){
+    background: #9bdc28;
+}
+
+.dino-container .dino-card .content .color span:nth-child(3){
+    background: #03a9f4;
+}
+
+.dino-container .dino-card .content .color span:nth-child(4){
+    background: purple;
+}
+
+.dino-container .dino-card .content a {
+    position: relative;
+    top: 10px;
+    display: inline-block;
+    padding: 12px 30px;
+    background: #fff;
+    border-radius: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #111;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s ease-in;
+}
+
+.dino-container .dino-card .content a:hover{
+    background-color: purple;
+    color: #fff;
 }

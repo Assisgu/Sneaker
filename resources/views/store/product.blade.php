@@ -1,5 +1,5 @@
 @extends('layouts.store')
-@section('content')
+@section('produtos')
 <section>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -10,6 +10,7 @@
 </section>
 <section class="container py-4">
     <div class="row">
+
         <div class="col-4 mx-auto text-center">
             <img src="{{ asset($product->image) }}" class="img-fluid">
         </div>

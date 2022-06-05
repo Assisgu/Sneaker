@@ -17,6 +17,8 @@
     <!-- Css Style -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/welcome.css">
+
+    <link rel="shortcut icon" href="../storage/imagem/logo.png">
     
     <title>Dino Sneakers</title>
 </head>
@@ -27,7 +29,7 @@
         <nav class="navbar navbar-expand-md navbar-light shadow-sm dino-navbar-menu "> 
             <div class="container">
                 <a class="navbar-brand logo" href="{{ url('/') }}">
-                    <img src="./storage/imagem/logo.png" alt="Logo Dino Sneaker">
+                    <img src="../assets/imagem/logo.png" alt="Logo Dino Sneaker">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
