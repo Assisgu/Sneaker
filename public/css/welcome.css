@@ -4,6 +4,30 @@ header{
 
 }
 video {
-
     width: 100%;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #232323;
+    overflow: hidden;
+    padding: 100px 20px;
+    box-sizing: border-box;
+}
+.dino-ball-purple{
+    /* position:static; */
+    width: 80vw;
+    height: 50vh;
+    background: rgb(137, 59, 210);
+    clip-path: circle(45% at 100% -20%);
+}
+
+
+.dino-ball-blue{
+    width: 60vw;
+    height: 60vh;
+    background: #47aafa;
+    clip-path: circle(35% at 10% 100%);
 }

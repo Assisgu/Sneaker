@@ -3,11 +3,23 @@
 @section('video')
                 <video controls autoplay loop muted playsinline>
                     <source src="../storage/video/dino.mp4" type="video/mp4">
-                </video>
+                </video>   
+@endsection
+
+@section('produtos')
+    <section class="content position-relative">
+        <span class="dino-ball-purple position-absolute top-0 end-0" data-aos="fade-left"></span>
+       
+        <span class="dino-ball-blue position-absolute bottom-0 start-0" data-aos="fade-right"></span>
+    </section>
 @endsection
 
 
-@section('content')
+
+
+
+
+{{-- @section('content')
     <section class="container">
         <div class="row">
             @foreach ($products as $product)
@@ -24,7 +36,7 @@
             @endforeach
         </div>
     </section>
-    @endsection
+    @endsection --}}
 
 
 
