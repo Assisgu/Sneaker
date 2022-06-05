@@ -30,7 +30,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto ">
                         <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarCategoria" role="button" data-bs-toggle="dropdown">Categorias</a>
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarCategoria" role="button" data-bs-toggle="dropdown">Marcas</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarCategoria">
                                 @foreach (\App\Models\Brand::all() as $brand)
                                     <a class="dropdown-item" href="{{ route('search-brand', $brand->id) }}">{{ $brand->name }}</a>
