@@ -1,6 +1,6 @@
 @extends('layouts.store')
 
-@section('produtos')
+@section('content')
     <section class="container py-4">
         <div class="row">
             <div class="mx-auto col-10 text-center">
@@ -26,8 +26,8 @@
                                 <span>10</span>
                         </div>
                         <div class="color">
-                             <h3> Valor :</h3>
-                             <h3> R$ :{{ $product->price }}</h3>
+                             <h3> R$ :</h3>
+                             <h3> {{ $product->price }}</h3>
                         </div>
                          <a href="{{route('show.product', $product->id)}}"> Visualizar</a>
                     </div>
@@ -49,6 +49,6 @@
                     </div>
                 </div>
             @endforeach
-        </div> --}}
+        </div>  --}}
     </section>
 @endsection

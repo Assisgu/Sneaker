@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../storage/imagem/logo.png">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -13,12 +14,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-
     <!-- Css Style -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/welcome.css">
-
-    <link rel="shortcut icon" href="../storage/imagem/logo.png">
     
     <title>Dino Sneakers</title>
 </head>
@@ -61,7 +59,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('order.index') }}">
-                                Ordens
+                                Pedidos
                             </a>
                         </li>
                         @endif 
@@ -124,8 +122,8 @@
         {{-- AQUIIII @yield('content') --}}
     </section>
 
-        @yield('produtos')
-        
+        @yield('marcas')
+        @yield('content')
 
     </main>
     

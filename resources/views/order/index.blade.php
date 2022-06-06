@@ -1,12 +1,12 @@
 @extends('layouts.store')
 @section('content')
     @foreach($orders as $order)
-        <section class="container mt-5">
+        <section class="container text-white">
             <div>
                 <h2>Pedido: {{ $order->id }}</h2>
                 <p>Endereço de entrega: {{ $order->address }}, {{ $order->city }}, {{ $order->state }}, {{ $order->zipcode }}</p>
             </div>
-            <table class="table">
+            <table class="table text-white">
                 <thead>
                     <tr>
                         <th>Tênis</th>

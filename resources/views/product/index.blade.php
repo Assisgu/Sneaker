@@ -1,6 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
+
 <a class="btn btn-md btn-secondary float-end me-2" href="{{route('product.trash')}}">Tênis Sem Estoque</a>
 <a class="btn btn-md btn-success float-end me-2" href="{{route('product.create')}}">Adicionar Tênis</a>
 <div class="container mt-2">

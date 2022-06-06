@@ -1,6 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
+
 <section class="container mt-2 text-center">
     <div class="text-center justify-content-center d-flex">
         <a class="btn btn-md btn-dark float-end me-2" href="{{route('product.index')}}">Voltar a Lista Tênis</a>
@@ -35,7 +35,7 @@
 
         <div class="col-7">
             Selecione tags:
-            <select class="form-select" multiple name="tags[]" required>
+            <select class="form-select" multiple name="tags[]">
                 @foreach($tags as $tag)
                 <option value="{{$tag->id}}">{{$tag->name}}</option>
                 @endforeach

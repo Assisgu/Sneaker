@@ -1,6 +1,6 @@
 @extends('layouts.store')
 @section('content')
-<section class="container mt-5">
+<section class="container text-white vh-100">
     <div class="row">
         <div class="col-4">
             <h2>Detalhes do Endereço</h2>
@@ -22,12 +22,12 @@
                     <label for="state">Estado</label>
                     <input type="text" class="form-control" name="state" placeholder="Estado">
                 </div>
-                <button type="submit" class="btn btn-lg btn-dark my-2 float-end">Comprar</button>
+                <button type="submit" class="btn btn-lg btn-success my-2 float-end">Comprar</button>
             </form>
         </div>
         <div class="col-8">
             <h2>Detalhes dos Produtos</h2>
-            <table class="table">
+            <table class="table text-white">
                 <thead>
                     <tr>
                         <th>Produto</th>
@@ -47,13 +47,13 @@
                         <td>
                         <form action="{{route('cart.store', [$item->Product->id, $item->Size->id])}}" method="POST" style="display:inline;">
                                 @csrf
-                                <button type="submit" class="btn btn-dark btn-sm">+</button>
+                                <button type="submit" class="btn btn-info btn-sm">+</button>
                             </form>
                             {{$item->units}}
                             <form action="{{route('cart.store', [$item->Product->id,$item->Size->id])}}" method="POST" style="display:inline">
                                 @csrf
                                 @method("DELETE")
-                                <button type="submit" class="btn btn-dark btn-sm">-</button>
+                                <button type="submit" class="btn btn-danger btn-sm">-</button>
                             </form>
                         </td>
                     </tr>
