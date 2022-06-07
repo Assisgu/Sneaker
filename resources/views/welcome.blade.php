@@ -1,8 +1,8 @@
 @extends('layouts.store')
 
 @section('video')
-    <video controls autoplay loop muted playsinline>
-        <source src="../assets/video/dino.mp4" type="video/mp4">
+    <video  autoplay loop muted playsinline>
+        <source src="../assets/video/dino1.mp4" type="video/mp4">
     </video> 
 @endsection
 
@@ -46,7 +46,7 @@
 
                 <div class="col-md-4" data-aos="fade-right">
                     <div class="textbanner">
-                        <a class="textbanner-link" href="#" title="Jordan" aria-label="Jordan">
+                        <a class="textbanner-link" href="/search/category/3" title="Jordan" aria-label="Jordan">
                             <div class="textbanner-image">
                                 <img class="textbanner-image-background lazyautosizes blur-up-huge lazyloaded" src="//d2r9epyceweg5n.cloudfront.net/stores/002/020/340/themes/amazonas/1-img-1547996539-1647490172-c4087ea9e40ddd727c42a51cd0caf9ea1647490173-50-0.webp?2067999946" data-srcset="//d2r9epyceweg5n.cloudfront.net/stores/002/020/340/themes/amazonas/1-img-1547996539-1647490172-c4087ea9e40ddd727c42a51cd0caf9ea1647490173-480-0.webp?2067999946 480w, //d2r9epyceweg5n.cloudfront.net/stores/002/020/340/themes/amazonas/1-img-1547996539-1647490172-c4087ea9e40ddd727c42a51cd0caf9ea1647490173-640-0.webp?2067999946 640w" data-sizes="auto" data-expand="-10" alt="Jordan" sizes="403px" srcset="//d2r9epyceweg5n.cloudfront.net/stores/002/020/340/themes/amazonas/1-img-1547996539-1647490172-c4087ea9e40ddd727c42a51cd0caf9ea1647490173-480-0.webp?2067999946 480w, //d2r9epyceweg5n.cloudfront.net/stores/002/020/340/themes/amazonas/1-img-1547996539-1647490172-c4087ea9e40ddd727c42a51cd0caf9ea1647490173-640-0.webp?2067999946 640w">
                             </div>
