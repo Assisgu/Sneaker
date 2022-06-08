@@ -16,7 +16,10 @@
 
     <!-- Css Style -->
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/show.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/welcome.css') }}">
+
+
 
     <title>Dino Sneakers</title>
 </head>

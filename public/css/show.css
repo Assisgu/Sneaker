@@ -1,0 +1,128 @@
+
+.dino-show{
+    width: 70%;
+    height: 60%;
+    display: flex;
+    border: none;
+    min-height: 60vh;
+    min-width:285px;
+    min-height: 450px;
+}
+
+.dino-show-img{
+    width: 50%;
+    height: 100%;
+    border-radius: 0px;
+    background: rgba(255, 255, 255, 0.112);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px 0 0 30px;
+    min-width: 280px;
+    min-height: 450px;
+}
+.dino-show-img img{
+    width: 60%;
+    background-color: transparent;
+    transition: 0.5s ease-in-out;
+}
+.dino-show-img:hover img{
+    width: 80%;
+}
+
+.dino-show-img:hover img {
+    transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
+}
+
+/* 
+.dino-show-img img:hover{
+    transition: ease-in-out 1;
+} */
+
+.dino-show-info{
+    width: 50%;
+    height: 100%;
+    background-color:#fff;
+    border: none;
+    border-radius: 0 30px 30px 0px;
+    min-width: 230px;
+    min-height: 450px;
+}
+.dino-show-info h2{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 4vh;
+    box-shadow: rgba(0, 0, 0, 0.4);
+    transition: ease-in-out 1;
+    color: #8843cf;
+}
+
+.dino-show-info h2:hover{
+    font-size: 4.5vh;
+    
+}
+
+.dino-show-info h3{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    font-size: 2vh;
+    color: #8843cf;
+}
+
+.dino-show-info p{
+    background-color: transparent;
+    text-align:justify;
+    font-size: 2vh;
+    font-weight:200;
+    max-height: 200px;
+    color: #8843cf;
+}
+
+.dino-price{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 2rem;
+    padding-top: 2.3vh;
+    padding-bottom: 4vh;
+    color: #8843cf;
+}
+.dino-num, 
+.dino-tags {
+    background-color: transparent;
+}
+
+.dino-tags{
+    padding-top: 10px;
+}
+.dino-num span,
+.dino-tags span {
+    background-color: transparent;
+    font-weight: 300;
+    font-size: 2vh;
+    padding-bottom: 0.6rem;  
+    color: #8843cf;
+}
+
+.dino-num button {
+display: inline;
+align-items: center;
+background-color: #8843cf;
+color: #fff;
+border: none;
+}
+
+.dino-num button:hover{
+    color: #8843cf;
+    background-color: #fff;;
+}
