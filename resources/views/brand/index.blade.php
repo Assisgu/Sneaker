@@ -1,17 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<a class="btn btn-md btn-secondary float-end me-2" href="{{route('brand.trash')}}">Restaurar Marca</a>
-<a class="btn btn-md btn-success float-end me-2" href="{{route('brand.create')}}">Adicionar Marca </a>
 
-<div class="container mt-2">
 
-    <table class="table table-striped">
+<div class="container py-4">
+    <h4 class="text-uppercase d-flex justify-content-center"> Gerenciador de marcas </h4>
+    <a class="btn btn-md btn-secondary float-end  my-3"  href="{{route('brand.trash')}}">Restaurar </a>
+    <a class="btn btn-md btn-success float-end me-4 my-3" href="{{route('brand.create')}}">Nova Marca </a>
+    <table class="table table-dark">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>                
-                <th>QTD Tênis</th>                
+                <th>Produtos</th>
+                <th>Editar</th>   
+                <th>Deletar</th>   
             </tr>
         </thead>
         <tbody>

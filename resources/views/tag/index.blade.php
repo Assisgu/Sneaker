@@ -1,17 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<a class="btn btn-md btn-secondary float-end me-2" href="{{route('tag.trash')}}">Restaurar Tag</a>
-<a class="btn btn-md btn-success float-end me-2" href="{{route('tag.create')}}">Adicionar Tag</a>
 
-<div class="container mt-2">
 
-    <table class="table table-striped">
+<div class="container py-4">
+    <h4 class="text-uppercase d-flex justify-content-center"> Gerenciador de tags </h4>
+    <a class="btn btn-md btn-secondary float-end  my-3" href="{{route('tag.trash')}}">Restaurar</a>
+    <a class="btn btn-md btn-success float-end me-4 my-3" href="{{route('tag.create')}}">Nova tag</a>
+    <table class="table table-dark">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>                
-                <th>QTD Tênis</th>                
+                <th>Produtos</th>    
+                <th>Editar</th>
+                <th>Deletar</th>            
             </tr>
         </thead>
         <tbody>
@@ -21,7 +24,7 @@
                 <td>{{$tag->name}}</td>                
                 <td>{{$tag->Products->count()}}</td>                
                 <td><a href="{{route('tag.edit', $tag->id)}}" class="btn btn-sm btn-warning text-decoration-none">Editar</a></td>
-                <td><a href="{{route('tag.destroy', $tag->id)}}" class="btn btn-sm btn-danger text-decoration-none">Esgotada</a></td>
+                <td><a href="{{route('tag.destroy', $tag->id)}}" class="btn btn-sm btn-danger text-decoration-none">Deletar</a></td>
             </tr>
             @endforeach
         </tbody>

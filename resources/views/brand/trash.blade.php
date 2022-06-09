@@ -1,16 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<a class="btn btn-md btn-dark float-end me-2" href="{{route('brand.index')}}">Voltar a Lista Marcas</a>
 
-<div class="container mt-2">
 
-    <table class="table table-striped">
+<div class="container my-4">
+    <h4 class="text-uppercase d-flex justify-content-center"> Tags excluidas</h4>
+    <a class="btn btn-md btn-secondary float-end my-3" href="{{route('brand.index')}}">Voltar</a>
+    <table class="table table-dark">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>                
-                <th>QTD Tênis</th>                
+                <th>Produtos</th>   
+                <th>Restaurar</th>              
             </tr>
         </thead>
         <tbody>

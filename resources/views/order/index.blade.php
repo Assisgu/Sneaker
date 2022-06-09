@@ -1,7 +1,7 @@
 @extends('layouts.store')
 @section('content')
     @foreach($orders as $order)
-        <section class="container text-white py-4 vh-100">
+        <section class="container text-white py-4 vh-100 ">
             <div>
                 <h2>Pedido: {{ $order->id }}</h2>
                 <p>Endereço de entrega: {{ $order->address }}, {{ $order->city }}, {{ $order->state }}, {{ $order->zipcode }}</p>

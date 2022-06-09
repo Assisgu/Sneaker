@@ -8,7 +8,7 @@
             </div>
         </div>
 
-        <span class="dino-ball-purple position-absolute top-0 end-0" data-aos="fade-down-left"></span>
+        {{-- <span class="dino-ball-purple position-absolute top-0 end-0" data-aos="fade-down-left"></span> --}}
         <div class="container dino-produtos d-flex flex-wrap justify-content-center">
 
             @foreach ($products as $product)    
@@ -21,11 +21,12 @@
 
                         <div class="content">
                             <div class="size">
-                                    <h3>Size :</h3>
-                                    <span>7</span>
-                                    <span>8</span>
-                                    <span>9</span>
-                                    <span>10</span>
+                                <h3>Size :</h3>
+                            @foreach($product->Sizes as $size)
+                                @if($size->stock > 0)
+                                    <span>{{ $size->number}}</span>
+                                @endif
+                            @endforeach
                             </div>
                             <div class="color">
                                 <h3> R$ :</h3>
@@ -38,6 +39,6 @@
             @endforeach
         
         </div>
-        <span class="dino-ball-blue position-absolute bottom-0 start-0" data-aos="fade-up-right"></span>
+        {{-- <span class="dino-ball-blue position-absolute bottom-0 start-0" data-aos="fade-up-right"></span> --}}
     </section>
 @endsection
