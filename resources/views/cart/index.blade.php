@@ -1,6 +1,6 @@
 @extends('layouts.store')
 @section('content')
-<section class="container text-white vh-100">
+<section class="container text-white vh-100 py-4">
     <div class="row">
         <div class="col-4">
             <h2>Detalhes do Endereço</h2>

@@ -19,7 +19,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 30px 0 0 30px;
+    border-radius: 60px 0 0 0;
     min-width: 280px;
     min-height: 450px;
 }
@@ -33,7 +33,7 @@
 }
 
 .dino-show-img:hover img {
-    transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
+    transform: translate(-20px,-40px) rotate(-20deg) scale(1.25);
 }
 
 /* 
@@ -46,7 +46,7 @@
     height: 100%;
     background-color:#fff;
     border: none;
-    border-radius: 0 30px 30px 0px;
+    border-radius: 0 0px 60px 0px;
     min-width: 230px;
     min-height: 450px;
 }
@@ -63,8 +63,7 @@
 }
 
 .dino-show-info h2:hover{
-    font-size: 4.5vh;
-    
+    color: #a850ff;
 }
 
 .dino-show-info h3{
@@ -72,7 +71,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 2vh;
     color: #8843cf;
 }
@@ -80,10 +79,14 @@
 .dino-show-info p{
     background-color: transparent;
     text-align:justify;
-    font-size: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7vh;
     font-weight:200;
     max-height: 200px;
     color: #8843cf;
+    line-height: 1.1;
 }
 
 .dino-price{
@@ -110,19 +113,31 @@
     background-color: transparent;
     font-weight: 300;
     font-size: 2vh;
-    padding-bottom: 0.6rem;  
+    padding-bottom: 0.6rem;
+    padding-left: 25px;  
     color: #8843cf;
 }
 
 .dino-num button {
-display: inline;
-align-items: center;
-background-color: #8843cf;
-color: #fff;
-border: none;
+    display: inline;
+    align-items: center;
+    background-color: rgba(100, 99, 99, 0.577);
+    color: #fff;
+    border: none;
+}
+.dino-num button:hover{
+    color: #fff;
+    background-color: #8843cf;
 }
 
-.dino-num button:hover{
-    color: #8843cf;
-    background-color: #fff;;
+.dino-tags a {
+    display: inline;
+    align-items: center;
+    background-color: rgba(100, 99, 99, 0.577);
+    color: #fff;
+    border: none;
+}
+.dino-tags a:hover{
+    color: #fff;
+    background-color: #8843cf;
 }

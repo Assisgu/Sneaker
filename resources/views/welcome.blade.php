@@ -20,11 +20,12 @@
 
                     <div class="content">
                         <div class="size">
-                                <h3>Size :</h3>
-                                <span>7</span>
-                                <span>8</span>
-                                <span>9</span>
-                                <span>10</span>
+                            <h3>Size :</h3>
+                        @foreach($product->Sizes as $size)
+                            @if($size->stock > 0)
+                                <span>{{ $size->number}}</span>
+                            @endif
+                        @endforeach
                         </div>
                         <div class="color">
                              <h3> R$ :</h3>

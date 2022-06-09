@@ -1,11 +1,10 @@
 @extends('layouts.store')
 
 @section('content')
-    <section class="container py-4">
+    <section class="container py-4 vh-100">
         <div class="row">
             <div class="mx-auto col-10 text-center">
                 <h2 class="text-uppercase text-white">{{ $title }}</h2>
-                <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, nobis!</p>
             </div>
         </div>
 

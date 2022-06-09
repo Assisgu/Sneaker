@@ -19,25 +19,25 @@
         <div class="dino-show-info">
             <h2 class="pt-5 text-uppercase"> {{ $product->name }}</h2>
             <h3 class="py-1 text-uppercase"> Descrição</h3>
-            <p class="px-3 dino-desc"> {{ $product->description }} </p>
+            <p class="px-4 dino-desc"> {{ $product->description }} </p>
             <span class="dino-price"> R$ {{ $product->price }}</span>
             
-            <div class="dino-num px-3">
-                <span>Sizes </span> 
+            <div class="dino-num">
+                <span>Sizes : </span> 
                 @foreach($product->Sizes as $size)
                     @if($size->stock > 0)
                     <form action="{{ route('cart.store', [$product->id, $size->id]) }}" method="POST" style="display:inline">
                         @csrf
-                        <button type="submit" class="btn btn-light btn-sm ">{{ $size->number}}</button>
+                        <button type="submit" class="btn btn-dark btn-sm ">{{ $size->number}}</button>
                     </form>
                     @endif
                 @endforeach
             </div>
 
-            <div class="dino-tags px-3">
-                <span> Tags </span> 
+            <div class="dino-tags ">
+                <span> Tags relacionadas : </span> 
                 @foreach($product->Tags as $tag)
-                    <a class="btn btn-sm btn-light" href="{{ route('search-tag', $tag->id) }}">{{$tag->name}}</a>
+                    <a class="btn btn-sm " href="{{ route('search-tag', $tag->id) }}">{{$tag->name}}</a>
                 @endforeach
             </div>
             
